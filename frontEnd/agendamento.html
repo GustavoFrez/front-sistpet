@@ -204,10 +204,12 @@
           data.nomeAdotante !== "" &&
           data.cpfAdotante !== ""
         ) {
-          axios.post("http://localhost:2424/visitas", data).then((data) => {
-            alert("Visita Cadastrada");
-            window.location.href = "/frontEnd/index.html";
-          });
+          axios
+            .post("https://sistspet.herokuapp.com/visitas", data)
+            .then((data) => {
+              alert("Visita Cadastrada");
+              window.location.href = "/frontEnd/index.html";
+            });
         } else {
           alert("Preencha todos os campos para efetuar o agendamento");
         }

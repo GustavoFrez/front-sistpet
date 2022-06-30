@@ -42,7 +42,7 @@
             </div>
           </div>
         </label>
-        <input id="logar" type="button" value="Login" style="cursor: pointer;" />
+        <input id="logar" type="button" value="Login" style="cursor: pointer" />
       </form>
 
       <button>
@@ -62,31 +62,33 @@
         };
         let user = $("select").val();
         if (user == "Administrador") {
-          axios.post("http://localhost:2424/admin/login", data).then((data) => {
-            let dados = data.data;
-            if (dados.Ok) {
-              alert(dados.Ok);
-              sessionStorage.userLogin = dados.user.login
-              window.location.href = "/admin/index.html";
-            } else {
-              alert(dados.erro);
-            }
-          });
-        } else {
           axios
-            .post("http://localhost:2424/funcionario/login", data)
+            .post("hhttps://sistspet.herokuapp.com/admin/login", data)
             .then((data) => {
               let dados = data.data;
               if (dados.Ok) {
                 alert(dados.Ok);
-                sessionStorage.userLogin = dados.user.login
-                sessionStorage.userNome = dados.user.nome
-                sessionStorage.userCpf = dados.user.cpf
-                sessionStorage.userSexo = dados.user.sexo
-                sessionStorage.userEmail = dados.user.email
-                sessionStorage.userNascimento = dados.user.dataDeNascimento
-                sessionStorage.userNascimento = dados.user.tel
-                sessionStorage.userNascimento = dados.user.endereco
+                sessionStorage.userLogin = dados.user.login;
+                window.location.href = "/admin/index.html";
+              } else {
+                alert(dados.erro);
+              }
+            });
+        } else {
+          axios
+            .post("https://sistspet.herokuapp.com/funcionario/login", data)
+            .then((data) => {
+              let dados = data.data;
+              if (dados.Ok) {
+                alert(dados.Ok);
+                sessionStorage.userLogin = dados.user.login;
+                sessionStorage.userNome = dados.user.nome;
+                sessionStorage.userCpf = dados.user.cpf;
+                sessionStorage.userSexo = dados.user.sexo;
+                sessionStorage.userEmail = dados.user.email;
+                sessionStorage.userNascimento = dados.user.dataDeNascimento;
+                sessionStorage.userNascimento = dados.user.tel;
+                sessionStorage.userNascimento = dados.user.endereco;
                 window.location.href = "/employee/index.html";
               } else {
                 alert(dados.erro);

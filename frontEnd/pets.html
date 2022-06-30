@@ -34,7 +34,7 @@
     <script src="./js/main.js"></script>
     <script src="./js/logout.js"></script>
     <script>
-        fetch('http://localhost:2424/pets').then(result => result.json())
+        fetch('https://sistspet.herokuapp.com/pets').then(result => result.json())
             .then(data => {
                 data.forEach(element => {
                     $('.row').append(`

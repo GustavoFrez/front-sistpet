@@ -59,15 +59,17 @@
           novaSenha: $("#novaSenha").val(),
         };
 
-        axios.post("http://localhost:2424/newPassword", data).then((data) => {
-          let dados = data.data;
-          if (dados.Ok) {
-            alert(dados.Ok);
-            window.location.href = "/frontEnd/index.html";
-          } else {
-            alert(dados.erro);
-          }
-        });
+        axios
+          .post("https://sistspet.herokuapp.com/newPassword", data)
+          .then((data) => {
+            let dados = data.data;
+            if (dados.Ok) {
+              alert(dados.Ok);
+              window.location.href = "/frontEnd/index.html";
+            } else {
+              alert(dados.erro);
+            }
+          });
       });
     </script>
   </body>
