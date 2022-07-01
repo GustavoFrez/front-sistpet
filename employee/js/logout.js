@@ -5,7 +5,7 @@ if (
   sessionStorage.userLogin == "null"
 ) {
   alert("Por favor efetue o login em nosso sistema");
-  window.location.href = "./index.html";
+  window.location.href = "/index.html";
 }
 
 //SISTEMA DE LOGOUT
@@ -18,5 +18,5 @@ $("#logout").click(() => {
   sessionStorage.userNascimento = null;
   sessionStorage.userNascimento = null;
   sessionStorage.userNascimento = null;
-  window.location.href = "./index.html";
+  window.location.href = "/index.html";
 });
