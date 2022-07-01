@@ -368,6 +368,7 @@ main {
 }
 
 .sobre .texto-sobre {
+  width: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -378,6 +379,7 @@ main {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 .sobre .texto-sobre h1 {
