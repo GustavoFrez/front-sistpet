@@ -63,7 +63,7 @@
         let user = $("select").val();
         if (user == "Administrador") {
           axios
-            .post("hhttps://sistspet.herokuapp.com/admin/login", data)
+            .post("https://sistspet.herokuapp.com/admin/login", data)
             .then((data) => {
               let dados = data.data;
               if (dados.Ok) {
